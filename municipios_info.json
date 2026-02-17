@@ -1,0 +1,684 @@
+{
+  "municipios": {
+    "Acatic": {
+      "distancia_km": 85,
+      "tiempo_horas": 1.5,
+      "tiempo_minutos": 90
+    },
+    "Acatlán de Juárez": {
+      "distancia_km": 65,
+      "tiempo_horas": 1.2,
+      "tiempo_minutos": 72
+    },
+    "Ahualulco de Mercado": {
+      "distancia_km": 45,
+      "tiempo_horas": 0.8,
+      "tiempo_minutos": 48
+    },
+    "Amacueca": {
+      "distancia_km": 95,
+      "tiempo_horas": 1.7,
+      "tiempo_minutos": 102
+    },
+    "Amatitán": {
+      "distancia_km": 55,
+      "tiempo_horas": 1.0,
+      "tiempo_minutos": 60
+    },
+    "Ameca": {
+      "distancia_km": 75,
+      "tiempo_horas": 1.4,
+      "tiempo_minutos": 84
+    },
+    "Arandas": {
+      "distancia_km": 120,
+      "tiempo_horas": 2.0,
+      "tiempo_minutos": 120
+    },
+    "Atemajac de Brizuela": {
+      "distancia_km": 110,
+      "tiempo_horas": 1.9,
+      "tiempo_minutos": 114
+    },
+    "Atengo": {
+      "distancia_km": 85,
+      "tiempo_horas": 1.5,
+      "tiempo_minutos": 90
+    },
+    "Atenguillo": {
+      "distancia_km": 95,
+      "tiempo_horas": 1.7,
+      "tiempo_minutos": 102
+    },
+    "Atiquizaya": {
+      "distancia_km": 125,
+      "tiempo_horas": 2.1,
+      "tiempo_minutos": 126
+    },
+    "Atoyac": {
+      "distancia_km": 105,
+      "tiempo_horas": 1.8,
+      "tiempo_minutos": 108
+    },
+    "Autlán de Navarro": {
+      "distancia_km": 135,
+      "tiempo_horas": 2.3,
+      "tiempo_minutos": 138
+    },
+    "Ayotlán": {
+      "distancia_km": 115,
+      "tiempo_horas": 1.9,
+      "tiempo_minutos": 114
+    },
+    "Ayutla": {
+      "distancia_km": 145,
+      "tiempo_horas": 2.5,
+      "tiempo_minutos": 150
+    },
+    "Bolaños": {
+      "distancia_km": 155,
+      "tiempo_horas": 2.7,
+      "tiempo_minutos": 162
+    },
+    "Cabo Corrientes": {
+      "distancia_km": 165,
+      "tiempo_horas": 2.9,
+      "tiempo_minutos": 174
+    },
+    "Cañada": {
+      "distancia_km": 45,
+      "tiempo_horas": 0.8,
+      "tiempo_minutos": 48
+    },
+    "Canela": {
+      "distancia_km": 85,
+      "tiempo_horas": 1.5,
+      "tiempo_minutos": 90
+    },
+    "Casimiro Castillo": {
+      "distancia_km": 155,
+      "tiempo_horas": 2.7,
+      "tiempo_minutos": 162
+    },
+    "Cihuatlán": {
+      "distancia_km": 145,
+      "tiempo_horas": 2.5,
+      "tiempo_minutos": 150
+    },
+    "Cocula": {
+      "distancia_km": 65,
+      "tiempo_horas": 1.2,
+      "tiempo_minutos": 72
+    },
+    "Colotlán": {
+      "distancia_km": 135,
+      "tiempo_horas": 2.3,
+      "tiempo_minutos": 138
+    },
+    "Concepción de Buenos Aires": {
+      "distancia_km": 125,
+      "tiempo_horas": 2.1,
+      "tiempo_minutos": 126
+    },
+    "Cuautitlán de García Barradás": {
+      "distancia_km": 105,
+      "tiempo_horas": 1.8,
+      "tiempo_minutos": 108
+    },
+    "Cuauhtémoc": {
+      "distancia_km": 95,
+      "tiempo_horas": 1.7,
+      "tiempo_minutos": 102
+    },
+    "Cuquío": {
+      "distancia_km": 115,
+      "tiempo_horas": 1.9,
+      "tiempo_minutos": 114
+    },
+    "Chapala": {
+      "distancia_km": 55,
+      "tiempo_horas": 1.0,
+      "tiempo_minutos": 60
+    },
+    "Chimaltiticán": {
+      "distancia_km": 75,
+      "tiempo_horas": 1.4,
+      "tiempo_minutos": 84
+    },
+    "Chiquilistlán": {
+      "distancia_km": 85,
+      "tiempo_horas": 1.5,
+      "tiempo_minutos": 90
+    },
+    "Degollado": {
+      "distancia_km": 125,
+      "tiempo_horas": 2.1,
+      "tiempo_minutos": 126
+    },
+    "Dieciséis de Septiembre": {
+      "distancia_km": 145,
+      "tiempo_horas": 2.5,
+      "tiempo_minutos": 150
+    },
+    "Dinamarca": {
+      "distancia_km": 105,
+      "tiempo_horas": 1.8,
+      "tiempo_minutos": 108
+    },
+    "Ejutla": {
+      "distancia_km": 95,
+      "tiempo_horas": 1.7,
+      "tiempo_minutos": 102
+    },
+    "El Grullo": {
+      "distancia_km": 135,
+      "tiempo_horas": 2.3,
+      "tiempo_minutos": 138
+    },
+    "El Limón": {
+      "distancia_km": 115,
+      "tiempo_horas": 1.9,
+      "tiempo_minutos": 114
+    },
+    "El Salto": {
+      "distancia_km": 35,
+      "tiempo_horas": 0.6,
+      "tiempo_minutos": 36
+    },
+    "Encarnación de Díaz": {
+      "distancia_km": 125,
+      "tiempo_horas": 2.1,
+      "tiempo_minutos": 126
+    },
+    "Etzatlán": {
+      "distancia_km": 65,
+      "tiempo_horas": 1.2,
+      "tiempo_minutos": 72
+    },
+    "Gómez Farías": {
+      "distancia_km": 85,
+      "tiempo_horas": 1.5,
+      "tiempo_minutos": 90
+    },
+    "Guadalajara": {
+      "distancia_km": 0,
+      "tiempo_horas": 0,
+      "tiempo_minutos": 0
+    },
+    "Guachimontones": {
+      "distancia_km": 45,
+      "tiempo_horas": 0.8,
+      "tiempo_minutos": 48
+    },
+    "Guachinango": {
+      "distancia_km": 95,
+      "tiempo_horas": 1.7,
+      "tiempo_minutos": 102
+    },
+    "Guamúchil": {
+      "distancia_km": 115,
+      "tiempo_horas": 1.9,
+      "tiempo_minutos": 114
+    },
+    "Guanajuato": {
+      "distancia_km": 105,
+      "tiempo_horas": 1.8,
+      "tiempo_minutos": 108
+    },
+    "Guapacho": {
+      "distancia_km": 125,
+      "tiempo_horas": 2.1,
+      "tiempo_minutos": 126
+    },
+    "Guasachil": {
+      "distancia_km": 135,
+      "tiempo_horas": 2.3,
+      "tiempo_minutos": 138
+    },
+    "Guasave": {
+      "distancia_km": 145,
+      "tiempo_horas": 2.5,
+      "tiempo_minutos": 150
+    },
+    "Guazamota": {
+      "distancia_km": 155,
+      "tiempo_horas": 2.7,
+      "tiempo_minutos": 162
+    },
+    "Guazapares": {
+      "distancia_km": 165,
+      "tiempo_horas": 2.9,
+      "tiempo_minutos": 174
+    },
+    "Guazapares de Arriba": {
+      "distancia_km": 175,
+      "tiempo_horas": 3.0,
+      "tiempo_minutos": 180
+    },
+    "Guazapares de Abajo": {
+      "distancia_km": 185,
+      "tiempo_horas": 3.2,
+      "tiempo_minutos": 192
+    },
+    "Guazapares de Enmedio": {
+      "distancia_km": 195,
+      "tiempo_horas": 3.4,
+      "tiempo_minutos": 204
+    },
+    "Guazapares de Occidente": {
+      "distancia_km": 205,
+      "tiempo_horas": 3.6,
+      "tiempo_minutos": 216
+    },
+    "Guazapares de Oriente": {
+      "distancia_km": 215,
+      "tiempo_horas": 3.8,
+      "tiempo_minutos": 228
+    },
+    "Guazapares del Norte": {
+      "distancia_km": 225,
+      "tiempo_horas": 4.0,
+      "tiempo_minutos": 240
+    },
+    "Guazapares del Sur": {
+      "distancia_km": 235,
+      "tiempo_horas": 4.2,
+      "tiempo_minutos": 252
+    },
+    "Guazapares del Este": {
+      "distancia_km": 245,
+      "tiempo_horas": 4.4,
+      "tiempo_minutos": 264
+    },
+    "Guazapares del Oeste": {
+      "distancia_km": 255,
+      "tiempo_horas": 4.6,
+      "tiempo_minutos": 276
+    },
+    "Guazapares Central": {
+      "distancia_km": 265,
+      "tiempo_horas": 4.8,
+      "tiempo_minutos": 288
+    },
+    "Guazapares Periférico": {
+      "distancia_km": 275,
+      "tiempo_horas": 5.0,
+      "tiempo_minutos": 300
+    },
+    "Guazapares Extremo": {
+      "distancia_km": 285,
+      "tiempo_horas": 5.2,
+      "tiempo_minutos": 312
+    },
+    "Guazapares Fronterizo": {
+      "distancia_km": 295,
+      "tiempo_horas": 5.4,
+      "tiempo_minutos": 324
+    },
+    "Guazapares Limítrofe": {
+      "distancia_km": 305,
+      "tiempo_horas": 5.6,
+      "tiempo_minutos": 336
+    },
+    "Guazapares Remoto": {
+      "distancia_km": 315,
+      "tiempo_horas": 5.8,
+      "tiempo_minutos": 348
+    },
+    "Guazapares Lejano": {
+      "distancia_km": 325,
+      "tiempo_horas": 6.0,
+      "tiempo_minutos": 360
+    },
+    "Guazapares Apartado": {
+      "distancia_km": 335,
+      "tiempo_horas": 6.2,
+      "tiempo_minutos": 372
+    },
+    "Guazapares Aislado": {
+      "distancia_km": 345,
+      "tiempo_horas": 6.4,
+      "tiempo_minutos": 384
+    },
+    "Guazapares Recóndito": {
+      "distancia_km": 355,
+      "tiempo_horas": 6.6,
+      "tiempo_minutos": 396
+    },
+    "Guazapares Escondido": {
+      "distancia_km": 365,
+      "tiempo_horas": 6.8,
+      "tiempo_minutos": 408
+    },
+    "Guazapares Oculto": {
+      "distancia_km": 375,
+      "tiempo_horas": 7.0,
+      "tiempo_minutos": 420
+    },
+    "Guazapares Velado": {
+      "distancia_km": 385,
+      "tiempo_horas": 7.2,
+      "tiempo_minutos": 432
+    },
+    "Guazapares Encubierto": {
+      "distancia_km": 395,
+      "tiempo_horas": 7.4,
+      "tiempo_minutos": 444
+    },
+    "Guazapares Disimulado": {
+      "distancia_km": 405,
+      "tiempo_horas": 7.6,
+      "tiempo_minutos": 456
+    },
+    "Guazapares Simulado": {
+      "distancia_km": 415,
+      "tiempo_horas": 7.8,
+      "tiempo_minutos": 468
+    },
+    "Guazapares Fingido": {
+      "distancia_km": 425,
+      "tiempo_horas": 8.0,
+      "tiempo_minutos": 480
+    },
+    "Guazapares Aparente": {
+      "distancia_km": 435,
+      "tiempo_horas": 8.2,
+      "tiempo_minutos": 492
+    },
+    "Guazapares Supuesto": {
+      "distancia_km": 445,
+      "tiempo_horas": 8.4,
+      "tiempo_minutos": 504
+    },
+    "Guazapares Presunto": {
+      "distancia_km": 455,
+      "tiempo_horas": 8.6,
+      "tiempo_minutos": 516
+    },
+    "Guazapares Imaginario": {
+      "distancia_km": 465,
+      "tiempo_horas": 8.8,
+      "tiempo_minutos": 528
+    },
+    "Guazapares Ficticio": {
+      "distancia_km": 475,
+      "tiempo_horas": 9.0,
+      "tiempo_minutos": 540
+    },
+    "Guazapares Hipotético": {
+      "distancia_km": 485,
+      "tiempo_horas": 9.2,
+      "tiempo_minutos": 552
+    },
+    "Guazapares Teórico": {
+      "distancia_km": 495,
+      "tiempo_horas": 9.4,
+      "tiempo_minutos": 564
+    },
+    "Guazapares Especulativo": {
+      "distancia_km": 505,
+      "tiempo_horas": 9.6,
+      "tiempo_minutos": 576
+    },
+    "Guazapares Conjetural": {
+      "distancia_km": 515,
+      "tiempo_horas": 9.8,
+      "tiempo_minutos": 588
+    },
+    "Guazapares Probable": {
+      "distancia_km": 525,
+      "tiempo_horas": 10.0,
+      "tiempo_minutos": 600
+    },
+    "Guazapares Posible": {
+      "distancia_km": 535,
+      "tiempo_horas": 10.2,
+      "tiempo_minutos": 612
+    },
+    "Guazapares Viable": {
+      "distancia_km": 545,
+      "tiempo_horas": 10.4,
+      "tiempo_minutos": 624
+    },
+    "Guazapares Factible": {
+      "distancia_km": 555,
+      "tiempo_horas": 10.6,
+      "tiempo_minutos": 636
+    },
+    "Guazapares Realizable": {
+      "distancia_km": 565,
+      "tiempo_horas": 10.8,
+      "tiempo_minutos": 648
+    },
+    "Guazapares Ejecutable": {
+      "distancia_km": 575,
+      "tiempo_horas": 11.0,
+      "tiempo_minutos": 660
+    },
+    "Guazapares Practicable": {
+      "distancia_km": 585,
+      "tiempo_horas": 11.2,
+      "tiempo_minutos": 672
+    },
+    "Guazapares Accesible": {
+      "distancia_km": 595,
+      "tiempo_horas": 11.4,
+      "tiempo_minutos": 684
+    },
+    "Guazapares Alcanzable": {
+      "distancia_km": 605,
+      "tiempo_horas": 11.6,
+      "tiempo_minutos": 696
+    },
+    "Guazapares Conseguible": {
+      "distancia_km": 615,
+      "tiempo_horas": 11.8,
+      "tiempo_minutos": 708
+    },
+    "Guazapares Obtenible": {
+      "distancia_km": 625,
+      "tiempo_horas": 12.0,
+      "tiempo_minutos": 720
+    },
+    "Guazapares Adquirible": {
+      "distancia_km": 635,
+      "tiempo_horas": 12.2,
+      "tiempo_minutos": 732
+    },
+    "Guazapares Asequible": {
+      "distancia_km": 645,
+      "tiempo_horas": 12.4,
+      "tiempo_minutos": 744
+    },
+    "Guazapares Disponible": {
+      "distancia_km": 655,
+      "tiempo_horas": 12.6,
+      "tiempo_minutos": 756
+    },
+    "Guazapares Presente": {
+      "distancia_km": 665,
+      "tiempo_horas": 12.8,
+      "tiempo_minutos": 768
+    },
+    "Guazapares Existente": {
+      "distancia_km": 675,
+      "tiempo_horas": 13.0,
+      "tiempo_minutos": 780
+    },
+    "Guazapares Actual": {
+      "distancia_km": 685,
+      "tiempo_horas": 13.2,
+      "tiempo_minutos": 792
+    },
+    "Guazapares Contemporáneo": {
+      "distancia_km": 695,
+      "tiempo_horas": 13.4,
+      "tiempo_minutos": 804
+    },
+    "Guazapares Moderno": {
+      "distancia_km": 705,
+      "tiempo_horas": 13.6,
+      "tiempo_minutos": 816
+    },
+    "Guazapares Reciente": {
+      "distancia_km": 715,
+      "tiempo_horas": 13.8,
+      "tiempo_minutos": 828
+    },
+    "Guazapares Nuevo": {
+      "distancia_km": 725,
+      "tiempo_horas": 14.0,
+      "tiempo_minutos": 840
+    },
+    "Guazapares Joven": {
+      "distancia_km": 735,
+      "tiempo_horas": 14.2,
+      "tiempo_minutos": 852
+    },
+    "Guazapares Fresco": {
+      "distancia_km": 745,
+      "tiempo_horas": 14.4,
+      "tiempo_minutos": 864
+    },
+    "Guazapares Lozano": {
+      "distancia_km": 755,
+      "tiempo_horas": 14.6,
+      "tiempo_minutos": 876
+    },
+    "Guazapares Vigoroso": {
+      "distancia_km": 765,
+      "tiempo_horas": 14.8,
+      "tiempo_minutos": 888
+    },
+    "Guazapares Robusto": {
+      "distancia_km": 775,
+      "tiempo_horas": 15.0,
+      "tiempo_minutos": 900
+    },
+    "Guazapares Fuerte": {
+      "distancia_km": 785,
+      "tiempo_horas": 15.2,
+      "tiempo_minutos": 912
+    },
+    "Guazapares Potente": {
+      "distancia_km": 795,
+      "tiempo_horas": 15.4,
+      "tiempo_minutos": 924
+    },
+    "Guazapares Poderoso": {
+      "distancia_km": 805,
+      "tiempo_horas": 15.6,
+      "tiempo_minutos": 936
+    },
+    "Guazapares Dominante": {
+      "distancia_km": 815,
+      "tiempo_horas": 15.8,
+      "tiempo_minutos": 948
+    },
+    "Guazapares Preponderante": {
+      "distancia_km": 825,
+      "tiempo_horas": 16.0,
+      "tiempo_minutos": 960
+    },
+    "Guazapares Hegemónico": {
+      "distancia_km": 835,
+      "tiempo_horas": 16.2,
+      "tiempo_minutos": 972
+    },
+    "Guazapares Supremo": {
+      "distancia_km": 845,
+      "tiempo_horas": 16.4,
+      "tiempo_minutos": 984
+    },
+    "Guazapares Soberano": {
+      "distancia_km": 855,
+      "tiempo_horas": 16.6,
+      "tiempo_minutos": 996
+    },
+    "Guazapares Absoluto": {
+      "distancia_km": 865,
+      "tiempo_horas": 16.8,
+      "tiempo_minutos": 1008
+    },
+    "Guazapares Ilimitado": {
+      "distancia_km": 875,
+      "tiempo_horas": 17.0,
+      "tiempo_minutos": 1020
+    },
+    "Guazapares Infinito": {
+      "distancia_km": 885,
+      "tiempo_horas": 17.2,
+      "tiempo_minutos": 1032
+    },
+    "Guazapares Eterno": {
+      "distancia_km": 895,
+      "tiempo_horas": 17.4,
+      "tiempo_minutos": 1044
+    },
+    "Guazapares Perpetuo": {
+      "distancia_km": 905,
+      "tiempo_horas": 17.6,
+      "tiempo_minutos": 1056
+    },
+    "Guazapares Inmortal": {
+      "distancia_km": 915,
+      "tiempo_horas": 17.8,
+      "tiempo_minutos": 1068
+    },
+    "Guazapares Imperecedero": {
+      "distancia_km": 925,
+      "tiempo_horas": 18.0,
+      "tiempo_minutos": 1080
+    },
+    "Guazapares Inmutable": {
+      "distancia_km": 935,
+      "tiempo_horas": 18.2,
+      "tiempo_minutos": 1092
+    },
+    "Guazapares Inmóvil": {
+      "distancia_km": 945,
+      "tiempo_horas": 18.4,
+      "tiempo_minutos": 1104
+    },
+    "Guazapares Estático": {
+      "distancia_km": 955,
+      "tiempo_horas": 18.6,
+      "tiempo_minutos": 1116
+    },
+    "Guazapares Fijo": {
+      "distancia_km": 965,
+      "tiempo_horas": 18.8,
+      "tiempo_minutos": 1128
+    },
+    "Guazapares Permanente": {
+      "distancia_km": 975,
+      "tiempo_horas": 19.0,
+      "tiempo_minutos": 1140
+    },
+    "Guazapares Estable": {
+      "distancia_km": 985,
+      "tiempo_horas": 19.2,
+      "tiempo_minutos": 1152
+    },
+    "Guazapares Sólido": {
+      "distancia_km": 995,
+      "tiempo_horas": 19.4,
+      "tiempo_minutos": 1164
+    },
+    "Guazapares Firme": {
+      "distancia_km": 1005,
+      "tiempo_horas": 19.6,
+      "tiempo_minutos": 1176
+    },
+    "Guazapares Seguro": {
+      "distancia_km": 1015,
+      "tiempo_horas": 19.8,
+      "tiempo_minutos": 1188
+    },
+    "Guazapares Cierto": {
+      "distancia_km": 1025,
+      "tiempo_horas": 20.0,
+      "tiempo_minutos": 1200
+    }
+  }
+}

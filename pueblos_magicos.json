@@ -1,0 +1,76 @@
+{
+  "pueblos_magicos": [
+    {
+      "nombre": "Ajijic",
+      "municipio": "Chapala",
+      "lat": 20.3005337,
+      "lng": -103.262198
+    },
+    {
+      "nombre": "Cocula",
+      "municipio": "Cocula",
+      "lat": 20.3658117,
+      "lng": -103.8269627
+    },
+    {
+      "nombre": "Lagos de Moreno",
+      "municipio": "Lagos de Moreno",
+      "lat": 21.3607402,
+      "lng": -101.925953
+    },
+    {
+      "nombre": "Mascota",
+      "municipio": "Mascota",
+      "lat": 20.5289743,
+      "lng": -104.790351
+    },
+    {
+      "nombre": "Mazamitla",
+      "municipio": "Mazamitla",
+      "lat": 19.9179625,
+      "lng": -103.019921
+    },
+    {
+      "nombre": "San Sebastián del Oeste",
+      "municipio": "San Sebastián del Oeste",
+      "lat": 20.7616408,
+      "lng": -104.852881
+    },
+    {
+      "nombre": "Sayula",
+      "municipio": "Sayula",
+      "lat": 19.8796661,
+      "lng": -103.598472
+    },
+    {
+      "nombre": "Talpa de Allende",
+      "municipio": "Talpa de Allende",
+      "lat": 20.3783058,
+      "lng": -104.819555
+    },
+    {
+      "nombre": "Tapalpa",
+      "municipio": "Tapalpa",
+      "lat": 19.9458624,
+      "lng": -103.759173
+    },
+    {
+      "nombre": "Temacapulín",
+      "municipio": "Temacapulín",
+      "lat": 21.188262,
+      "lng": -102.706869
+    },
+    {
+      "nombre": "Tequila",
+      "municipio": "Tequila",
+      "lat": 20.8816072,
+      "lng": -103.832902
+    },
+    {
+      "nombre": "Tlaquepaque",
+      "municipio": "Tlaquepaque",
+      "lat": 20.6396534,
+      "lng": -103.311907
+    }
+  ]
+}

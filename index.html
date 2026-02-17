@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Turismo - Jalisco</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="app-header">
+        <div class="header-content">
+            <h1>🗺️ Dashboard Turismo - Jalisco</h1>
+            <p class="subtitle">Explora los municipios del estado de Jalisco</p>
+        </div>
+    </header>
+
+    <!-- Contenedor Principal -->
+    <main class="main-content">
+        <!-- Mapa Interactivo -->
+        <section class="map-section">
+            <div id="map" class="map-container"></div>
+        </section>
+    </main>
+
+    <!-- Pop-up de Información (Modal) -->
+    <div id="infoModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modalBody" class="modal-body">
+                <!-- El contenido se cargará dinámicamente aquí -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Scripts personalizados -->
+    <script src="map.js"></script>
+</body>
+</html>

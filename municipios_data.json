@@ -1,0 +1,124 @@
+{
+  "municipios": [
+    {
+      "nombre": "Ajijic",
+      "municipio": "Chapala",
+      "lat": 20.3005337,
+      "lng": -103.262198,
+      "consejos_seguridad": "Lleva siempre contigo una Conserva los datos de contacto de tus familiares. Memoriza el número telefónico de emergencias. No aceptes solicitudes de dinero de extraños. Cambia efectivo en establecimientos autorizados. Mantén contacto con familia regularmente. Verifica que las agencias sean confiables. Evita ser víctima de fraude. Infórmate, la violación a la ley 1.5 hrs / 60km",
+      "distancia_tiempo": "1.5 hrs / 60km",
+      "ruta_viaje": "https://www.waze.com/",
+      "link_turismo": "https://pueblosmagicos.mexicodesconocido.com.mx/jalisco"
+    },
+    {
+      "nombre": "Cocula",
+      "municipio": "Cocula",
+      "lat": 20.3658117,
+      "lng": -103.8269627,
+      "consejos_seguridad": "Lleva siempre contigo una Conserva los datos de contacto de tus familiares. Memoriza el número telefónico de emergencias. No aceptes solicitudes de dinero de extraños. Cambia efectivo en establecimientos autorizados. Mantén contacto con familia regularmente. Verifica que las agencias sean confiables. Evita ser víctima de fraude. Infórmate, la violación a la ley 2.0 hrs / 90km",
+      "distancia_tiempo": "2.0 hrs / 90km",
+      "ruta_viaje": "https://www.waze.com/",
+      "link_turismo": "https://pueblosmagicos.mexicodesconocido.com.mx/jalisco"
+    },
+    {
+      "nombre": "Lagos de Moreno",
+      "municipio": "Lagos de Moreno",
+      "lat": 21.3607402,
+      "lng": -101.925953,
+      "consejos_seguridad": "Lleva siempre contigo una Conserva los datos de contacto de tus familiares. Memoriza el número telefónico de emergencias. No aceptes solicitudes de dinero de extraños. Cambia efectivo en establecimientos autorizados. Mantén contacto con familia regularmente. Verifica que las agencias sean confiables. Evita ser víctima de fraude. Infórmate, la violación a la ley 2.2hrs / 190km",
+      "distancia_tiempo": "2.2hrs / 190km",
+      "ruta_viaje": "https://www.waze.com/",
+      "link_turismo": "https://pueblosmagicos.mexicodesconocido.com.mx/jalisco"
+    },
+    {
+      "nombre": "Mascota",
+      "municipio": "Mascota",
+      "lat": 20.5289743,
+      "lng": -104.790351,
+      "consejos_seguridad": "Lleva siempre contigo una Conserva los datos de contacto de tus familiares. Memoriza el número telefónico de emergencias. No aceptes solicitudes de dinero de extraños. Cambia efectivo en establecimientos autorizados. Mantén contacto con familia regularmente. Verifica que las agencias sean confiables. Evita ser víctima de fraude. Infórmate, la violación a la ley 3.2 hrs / 220 km",
+      "distancia_tiempo": "3.2 hrs / 220 km",
+      "ruta_viaje": "https://www.waze.com/",
+      "link_turismo": "https://pueblosmagicos.mexicodesconocido.com.mx/jalisco"
+    },
+    {
+      "nombre": "Mazamitla",
+      "municipio": "Mazamitla",
+      "lat": 19.9179625,
+      "lng": -103.019921,
+      "consejos_seguridad": "Lleva siempre contigo una Conserva los datos de contacto de tus familiares. Memoriza el número telefónico de emergencias. No aceptes solicitudes de dinero de extraños. Cambia efectivo en establecimientos autorizados. Mantén contacto con familia regularmente. Verifica que las agencias sean confiables. Evita ser víctima de fraude. Infórmate, la violación a la ley 2.4hrs / 170km",
+      "distancia_tiempo": "2.4hrs / 170km",
+      "ruta_viaje": "https://www.waze.com/",
+      "link_turismo": "https://pueblosmagicos.mexicodesconocido.com.mx/jalisco"
+    },
+    {
+      "nombre": "San Sebastián del Oeste",
+      "municipio": "San Sebastián del Oeste",
+      "lat": 20.7616408,
+      "lng": -104.852881,
+      "consejos_seguridad": "Lleva siempre contigo una Conserva los datos de contacto de tus familiares. Memoriza el número telefónico de emergencias. No aceptes solicitudes de dinero de extraños. Cambia efectivo en establecimientos autorizados. Mantén contacto con familia regularmente. Verifica que las agencias sean confiables. Evita ser víctima de fraude. Infórmate, la violación a la ley 4.4hrs /250km",
+      "distancia_tiempo": "4.4hrs /250km",
+      "ruta_viaje": "https://www.waze.com/",
+      "link_turismo": "https://pueblosmagicos.mexicodesconocido.com.mx/jalisco"
+    },
+    {
+      "nombre": "Sayula",
+      "municipio": "Sayula",
+      "lat": 19.8796661,
+      "lng": -103.598472,
+      "consejos_seguridad": "Lleva siempre contigo una Conserva los datos de contacto de tus familiares. Memoriza el número telefónico de emergencias. No aceptes solicitudes de dinero de extraños. Cambia efectivo en establecimientos autorizados. Mantén contacto con familia regularmente. Verifica que las agencias sean confiables. Evita ser víctima de fraude. Infórmate, la violación a la ley 2.1 hrs / 150km",
+      "distancia_tiempo": "2.1 hrs / 150km",
+      "ruta_viaje": "https://www.waze.com/",
+      "link_turismo": "https://pueblosmagicos.mexicodesconocido.com.mx/jalisco"
+    },
+    {
+      "nombre": "Talpa de Allende",
+      "municipio": "Talpa de Allende",
+      "lat": 20.3783058,
+      "lng": -104.819555,
+      "consejos_seguridad": "Lleva siempre contigo una Conserva los datos de contacto de tus familiares. Memoriza el número telefónico de emergencias. No aceptes solicitudes de dinero de extraños. Cambia efectivo en establecimientos autorizados. Mantén contacto con familia regularmente. Verifica que las agencias sean confiables. Evita ser víctima de fraude. Infórmate, la violación a la ley 3.2 hrs / 200km",
+      "distancia_tiempo": "3.2 hrs / 200km",
+      "ruta_viaje": "https://www.waze.com/",
+      "link_turismo": "https://pueblosmagicos.mexicodesconocido.com.mx/jalisco"
+    },
+    {
+      "nombre": "Tapalpa",
+      "municipio": "Tapalpa",
+      "lat": 19.9458624,
+      "lng": -103.759173,
+      "consejos_seguridad": "Lleva siempre contigo una Conserva los datos de contacto de tus familiares. Memoriza el número telefónico de emergencias. No aceptes solicitudes de dinero de extraños. Cambia efectivo en establecimientos autorizados. Mantén contacto con familia regularmente. Verifica que las agencias sean confiables. Evita ser víctima de fraude. Infórmate, la violación a la ley 2.5 hrs / 170km",
+      "distancia_tiempo": "2.5 hrs / 170km",
+      "ruta_viaje": "https://www.waze.com/",
+      "link_turismo": "https://pueblosmagicos.mexicodesconocido.com.mx/jalisco"
+    },
+    {
+      "nombre": "Temacapulín",
+      "municipio": "Temacapulín",
+      "lat": 21.188262,
+      "lng": -102.706869,
+      "consejos_seguridad": "Lleva siempre contigo una Conserva los datos de contacto de tus familiares. Memoriza el número telefónico de emergencias. No aceptes solicitudes de dinero de extraños. Cambia efectivo en establecimientos autorizados. Mantén contacto con familia regularmente. Verifica que las agencias sean confiables. Evita ser víctima de fraude. Infórmate, la violación a la ley 2.0 hrs / 135km",
+      "distancia_tiempo": "2.0 hrs / 135km",
+      "ruta_viaje": "https://www.waze.com/",
+      "link_turismo": "https://pueblosmagicos.mexicodesconocido.com.mx/jalisco"
+    },
+    {
+      "nombre": "Tequila",
+      "municipio": "Tequila",
+      "lat": 20.8816072,
+      "lng": -103.832902,
+      "consejos_seguridad": "Lleva siempre contigo una Conserva los datos de contacto de tus familiares. Memoriza el número telefónico de emergencias. No aceptes solicitudes de dinero de extraños. Cambia efectivo en establecimientos autorizados. Mantén contacto con familia regularmente. Verifica que las agencias sean confiables. Evita ser víctima de fraude. Infórmate, la violación a la ley 1.1hrs / 66km",
+      "distancia_tiempo": "1.1hrs / 66km",
+      "ruta_viaje": "https://www.waze.com/",
+      "link_turismo": "https://pueblosmagicos.mexicodesconocido.com.mx/jalisco"
+    },
+    {
+      "nombre": "Tlaquepaque",
+      "municipio": "Tlaquepaque",
+      "lat": 20.6396534,
+      "lng": -103.311907,
+      "consejos_seguridad": "Lleva siempre contigo una Conserva los datos de contacto de tus familiares. Memoriza el número telefónico de emergencias. No aceptes solicitudes de dinero de extraños. Cambia efectivo en establecimientos autorizados. Mantén contacto con familia regularmente. Verifica que las agencias sean confiables. Evita ser víctima de fraude. Infórmate, la violación a la ley 30 min / 14 km",
+      "distancia_tiempo": "30 min / 14 km",
+      "ruta_viaje": "https://www.waze.com/",
+      "link_turismo": "https://pueblosmagicos.mexicodesconocido.com.mx/jalisco"
+    }
+  ]
+}
