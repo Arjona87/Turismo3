@@ -6,8 +6,8 @@
  * - Carga del mapa base con Leaflet
  * - Renderizado de municipios desde GeoJSON
  * - Interactividad: hover transparente y click para mostrar información
- * - Pop-ups con información turística de cada municipio
- * - Marcadores de Pueblos Mágicos con información desde Google Sheets
+ * - Pop-ups con información turística desde Google Sheets (vía municipios_data.json)
+ * - Marcadores de Pueblos Mágicos
  */
 
 // ============================================
@@ -61,11 +61,34 @@ function initMap() {
         minZoom: 7
     }).addTo(map);
 
-    // Cargar datos de municipios
+    // Cargar datos de municipios desde archivo local
     loadMunicipiosData();
     
     // Cargar y mostrar Pueblos Mágicos
     loadPueblosMagicos();
+}
+
+// ============================================
+// CARGAR DATOS DE MUNICIPIOS (desde archivo local)
+// ============================================
+
+function loadMunicipiosData() {
+    fetch('municipios_data.json')
+        .then(response => response.json())
+        .then(data => {
+            // Convertir array a objeto indexado por nombre
+            data.municipios.forEach(municipio => {
+                municipiosData[municipio.nombre] = municipio;
+            });
+            console.log('Datos cargados:', Object.keys(municipiosData).length, 'municipios');
+            // Cargar GeoJSON después de obtener los datos
+            loadGeoJSON();
+        })
+        .catch(error => {
+            console.error('Error cargando municipios_data.json:', error);
+            // Intentar cargar GeoJSON de todas formas
+            loadGeoJSON();
+        });
 }
 
 // ============================================
@@ -96,7 +119,7 @@ function addPueblosMagicosToMap() {
         const marker = L.marker([pueblo.lat, pueblo.lng], {
             icon: puebloMagicoIcon,
             title: pueblo.nombre,
-            zIndexOffset: 1000 // Asegurar que los íconos estén por encima de los polígonos
+            zIndexOffset: 1000
         }).addTo(map);
 
         // Agregar tooltip con el nombre del Pueblo Mágico
@@ -106,32 +129,13 @@ function addPueblosMagicosToMap() {
             className: 'pueblo-magico-tooltip'
         });
 
-        // MODIFICACIÓN: Agregar evento click para mostrar información del municipio
+        // Evento click para mostrar información del municipio
         marker.on('click', function() {
             showMunicipioInfo(pueblo.nombre);
         });
 
         pueblosMagicosMarkers.push(marker);
     });
-}
-
-// ============================================
-// CARGAR DATOS DE MUNICIPIOS
-// ============================================
-
-function loadMunicipiosData() {
-    // Cargar información de distancia y tiempo
-    fetch('municipios_data.json')
-        .then(response => response.json())
-        .then(data => {
-            // Convertir array a objeto indexado por nombre
-            data.municipios.forEach(municipio => {
-                municipiosData[municipio.nombre] = municipio;
-            });
-            // Cargar GeoJSON después de obtener los datos
-            loadGeoJSON();
-        })
-        .catch(error => console.error('Error cargando municipios_data.json:', error));
 }
 
 // ============================================
@@ -228,7 +232,7 @@ function showMunicipioInfo(municipioNombre) {
         <h2>${municipio.nombre}</h2>
         
         <div class="info-section">
-            <div class="info-label">📍 DISTANCIA / TIEMPO DESDE GUADALAJARA</div>
+            <div class="info-label">📍 DESDE GUADALAJARA</div>
             <div class="info-value">${municipio.distancia_tiempo}</div>
         </div>
 
@@ -247,14 +251,14 @@ function showMunicipioInfo(municipioNombre) {
         <div class="info-section">
             <div class="info-label">🗺️ RUTA / VIAJE DESDE GDL</div>
             <div class="info-value">
-                <a href="${municipio.ruta_viaje}" target="_blank">${municipio.ruta_viaje}</a>
+                <a href="${municipio.ruta_viaje}" target="_blank" rel="noopener noreferrer">${municipio.ruta_viaje}</a>
             </div>
         </div>
 
         <div class="info-section">
             <div class="info-label">🌍 LINK TURISMO</div>
             <div class="info-value">
-                <a href="${municipio.link_turismo}" target="_blank">${municipio.link_turismo}</a>
+                <a href="${municipio.link_turismo}" target="_blank" rel="noopener noreferrer">${municipio.link_turismo}</a>
             </div>
         </div>
     `;
@@ -303,49 +307,10 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Cerrar modal con tecla ESC
+    // Cerrar modal al presionar ESC
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
             closeModal();
         }
     });
 });
-
-// ============================================
-// ESTILOS PARA TOOLTIPS
-// ============================================
-
-// Agregar estilos CSS dinámicamente para los tooltips
-const style = document.createElement('style');
-style.textContent = `
-    .municipio-tooltip {
-        background-color: rgba(30, 60, 114, 0.9) !important;
-        color: white !important;
-        border: none !important;
-        border-radius: 4px !important;
-        padding: 8px 12px !important;
-        font-size: 14px !important;
-        font-weight: 500 !important;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
-    }
-
-    .municipio-tooltip::before {
-        border-top-color: rgba(30, 60, 114, 0.9) !important;
-    }
-
-    .pueblo-magico-tooltip {
-        background-color: rgba(139, 0, 139, 0.9) !important;
-        color: white !important;
-        border: none !important;
-        border-radius: 4px !important;
-        padding: 8px 12px !important;
-        font-size: 14px !important;
-        font-weight: 600 !important;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
-    }
-
-    .pueblo-magico-tooltip::before {
-        border-top-color: rgba(139, 0, 139, 0.9) !important;
-    }
-`;
-document.head.appendChild(style);
