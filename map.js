@@ -1,127 +1,89 @@
 /*
  * Dashboard Turismo - Jalisco
  * Script principal para la gestión del mapa interactivo
- * Conecta en tiempo real a Google Sheets usando servicio proxy
+ * 
+ * Funcionalidades:
+ * - Carga del mapa base con Leaflet
+ * - Renderizado de municipios desde GeoJSON
+ * - Interactividad: hover transparente y click para mostrar información
+ * - Pop-ups con información turística de cada municipio
+ * - Marcadores de Pueblos Mágicos con información desde Google Sheets
  */
+
+// ============================================
+// VARIABLES GLOBALES
+// ============================================
 
 let map;
 let geojsonLayer;
 let municipiosData = {};
+let currentActiveFeature = null;
+let pueblosMagicosData = [];
 let pueblosMagicosMarkers = [];
 
-// Google Sheets URL con servicio proxy
-const GOOGLE_SHEETS_ID = '1x8jI4RYM6nvhydMfxBn68x7shxyEuf_KWNC0iDq8mzw';
-const GOOGLE_SHEETS_URL = `https://docs.google.com/spreadsheets/d/${GOOGLE_SHEETS_ID}/export?format=csv&gid=0`;
-const PROXY_URL = `https://api.allorigins.win/raw?url=${encodeURIComponent(GOOGLE_SHEETS_URL)}`;
-
+// Colores y estilos
 const STYLES = {
-    default: { color: '#666', weight: 2, opacity: 0.7, fillColor: '#d0d0d0', fillOpacity: 0.7 },
-    hover: { color: '#2a5298', weight: 2.5, opacity: 1, fillColor: '#2a5298', fillOpacity: 0.3 },
-    active: { color: '#1e3c72', weight: 3, opacity: 1, fillColor: '#2a5298', fillOpacity: 0.5 }
+    default: {
+        color: '#666',
+        weight: 2,
+        opacity: 0.7,
+        fillColor: '#d0d0d0',
+        fillOpacity: 0.7
+    },
+    hover: {
+        color: '#2a5298',
+        weight: 2.5,
+        opacity: 1,
+        fillColor: '#2a5298',
+        fillOpacity: 0.3
+    },
+    active: {
+        color: '#1e3c72',
+        weight: 3,
+        opacity: 1,
+        fillColor: '#2a5298',
+        fillOpacity: 0.5
+    }
 };
 
 // ============================================
-// INICIALIZACIÓN
+// INICIALIZACIÓN DEL MAPA
 // ============================================
 
 function initMap() {
+    // Crear mapa centrado en Jalisco
     map = L.map('map').setView([20.5, -103.5], 8);
+
+    // Agregar capa base de OpenStreetMap
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors',
         maxZoom: 19,
         minZoom: 7
     }).addTo(map);
 
-    loadDataFromGoogleSheets();
-    loadGeoJSON();
+    // Cargar datos de municipios
+    loadMunicipiosData();
+    
+    // Cargar y mostrar Pueblos Mágicos
+    loadPueblosMagicos();
 }
 
 // ============================================
-// CARGAR DATOS DESDE GOOGLE SHEETS
+// CARGAR Y MOSTRAR PUEBLOS MÁGICOS
 // ============================================
 
-function loadDataFromGoogleSheets() {
-    fetch(PROXY_URL)
-        .then(response => response.text())
-        .then(csvText => procesarDatosCSV(csvText))
-        .catch(error => console.error('Error:', error));
+function loadPueblosMagicos() {
+    fetch('pueblos_magicos.json')
+        .then(response => response.json())
+        .then(data => {
+            pueblosMagicosData = data.pueblos_magicos;
+            addPueblosMagicosToMap();
+        })
+        .catch(error => console.error('Error cargando pueblos_magicos.json:', error));
 }
 
-function procesarDatosCSV(csvText) {
-    const lines = csvText.trim().split('\n');
-    if (lines.length < 2) return;
-
-    const headerLine = lines[0];
-    const headers = parseCSVRow(headerLine).map(h => h.trim().toLowerCase());
-
-    const colIndices = {
-        pueblo_magico: headers.indexOf('pueblo mágico'),
-        latitud: headers.indexOf('latitud'),
-        longitud: headers.indexOf('longitud'),
-        consejos_seguridad: headers.indexOf('consejos de seguridad'),
-        distancia_tiempo: headers.indexOf('distancia / tiempo'),
-        ruta_viaje: headers.indexOf('ruta/viaje desde gdl'),
-        link_turismo: headers.indexOf('link turismo')
-    };
-
-    for (let i = 1; i < lines.length; i++) {
-        const line = lines[i].trim();
-        if (!line) continue;
-
-        const values = parseCSVRow(line);
-        const puebloMagico = values[colIndices.pueblo_magico]?.trim() || '';
-        const latitud = parseFloat(values[colIndices.latitud] || 0);
-        const longitud = parseFloat(values[colIndices.longitud] || 0);
-
-        if (puebloMagico && latitud && longitud) {
-            municipiosData[puebloMagico] = {
-                nombre: puebloMagico,
-                lat: latitud,
-                lng: longitud,
-                consejos_seguridad: values[colIndices.consejos_seguridad]?.trim() || '',
-                distancia_tiempo: values[colIndices.distancia_tiempo]?.trim() || '',
-                ruta_viaje: values[colIndices.ruta_viaje]?.trim() || '',
-                link_turismo: values[colIndices.link_turismo]?.trim() || ''
-            };
-
-            agregarMarcadorPuebloMagico(puebloMagico, latitud, longitud);
-        }
-    }
-}
-
-function parseCSVRow(line) {
-    const result = [];
-    let current = '';
-    let insideQuotes = false;
-
-    for (let i = 0; i < line.length; i++) {
-        const char = line[i];
-        const nextChar = line[i + 1];
-
-        if (char === '"') {
-            if (insideQuotes && nextChar === '"') {
-                current += '"';
-                i++;
-            } else {
-                insideQuotes = !insideQuotes;
-            }
-        } else if (char === ',' && !insideQuotes) {
-            result.push(current);
-            current = '';
-        } else {
-            current += char;
-        }
-    }
-
-    result.push(current);
-    return result;
-}
-
-// ============================================
-// MARCADORES DE PUEBLOS MÁGICOS
-// ============================================
-
-function agregarMarcadorPuebloMagico(nombre, lat, lng) {
+function addPueblosMagicosToMap() {
+    // Crear ícono personalizado para Pueblos Mágicos
     const puebloMagicoIcon = L.icon({
         iconUrl: 'pueblo-magico-icon.png',
         iconSize: [32, 32],
@@ -129,27 +91,51 @@ function agregarMarcadorPuebloMagico(nombre, lat, lng) {
         popupAnchor: [0, -16]
     });
 
-    const marker = L.marker([lat, lng], {
-        icon: puebloMagicoIcon,
-        title: nombre,
-        zIndexOffset: 1000
-    }).addTo(map);
+    // Agregar marcador para cada Pueblo Mágico
+    pueblosMagicosData.forEach(pueblo => {
+        const marker = L.marker([pueblo.lat, pueblo.lng], {
+            icon: puebloMagicoIcon,
+            title: pueblo.nombre,
+            zIndexOffset: 1000 // Asegurar que los íconos estén por encima de los polígonos
+        }).addTo(map);
 
-    marker.bindTooltip(nombre, {
-        permanent: false,
-        direction: 'top',
-        className: 'pueblo-magico-tooltip'
+        // Agregar tooltip con el nombre del Pueblo Mágico
+        marker.bindTooltip(pueblo.nombre, {
+            permanent: false,
+            direction: 'top',
+            className: 'pueblo-magico-tooltip'
+        });
+
+        // MODIFICACIÓN: Agregar evento click para mostrar información del municipio
+        marker.on('click', function() {
+            showMunicipioInfo(pueblo.nombre);
+        });
+
+        pueblosMagicosMarkers.push(marker);
     });
-
-    marker.on('click', function() {
-        showMunicipioInfo(nombre);
-    });
-
-    pueblosMagicosMarkers.push(marker);
 }
 
 // ============================================
-// CARGAR GEOJSON
+// CARGAR DATOS DE MUNICIPIOS
+// ============================================
+
+function loadMunicipiosData() {
+    // Cargar información de distancia y tiempo
+    fetch('municipios_data.json')
+        .then(response => response.json())
+        .then(data => {
+            // Convertir array a objeto indexado por nombre
+            data.municipios.forEach(municipio => {
+                municipiosData[municipio.nombre] = municipio;
+            });
+            // Cargar GeoJSON después de obtener los datos
+            loadGeoJSON();
+        })
+        .catch(error => console.error('Error cargando municipios_data.json:', error));
+}
+
+// ============================================
+// CARGAR GEOJSON DE MUNICIPIOS
 // ============================================
 
 function loadGeoJSON() {
@@ -160,20 +146,37 @@ function loadGeoJSON() {
                 style: getFeatureStyle,
                 onEachFeature: onEachFeature
             }).addTo(map);
+
+            // Ajustar vista al mapa cargado
+            if (geojsonLayer.getLayers().length > 0) {
+                map.fitBounds(geojsonLayer.getBounds(), { padding: [50, 50] });
+            }
         })
         .catch(error => console.error('Error cargando GeoJSON:', error));
 }
+
+// ============================================
+// OBTENER ESTILO DE CARACTERÍSTICA
+// ============================================
 
 function getFeatureStyle(feature) {
     return STYLES.default;
 }
 
-function onEachFeature(feature, layer) {
-    const municipioName = feature.properties.NOMGEO;
+// ============================================
+// PROCESAR CADA CARACTERÍSTICA DEL GEOJSON
+// ============================================
 
+function onEachFeature(feature, layer) {
+    const municipioNombre = feature.properties.NOMGEO;
+
+    // Agregar eventos de mouse
     layer.on('mouseover', function() {
         this.setStyle(STYLES.hover);
-        this.bindTooltip(municipioName, {
+        this.bringToFront();
+        
+        // Mostrar nombre del municipio en tooltip
+        this.bindTooltip(municipioNombre, {
             permanent: false,
             direction: 'center',
             className: 'municipio-tooltip'
@@ -181,34 +184,56 @@ function onEachFeature(feature, layer) {
     });
 
     layer.on('mouseout', function() {
-        this.setStyle(STYLES.default);
+        // Restaurar estilo anterior si no está activo
+        if (currentActiveFeature !== this) {
+            this.setStyle(STYLES.default);
+        }
         this.closeTooltip();
     });
 
+    // Evento de click para mostrar información
     layer.on('click', function() {
-        showMunicipioInfo(municipioName);
+        // Remover estilo activo del municipio anterior
+        if (currentActiveFeature && currentActiveFeature !== this) {
+            currentActiveFeature.setStyle(STYLES.default);
+        }
+
+        // Establecer nuevo municipio como activo
+        currentActiveFeature = this;
+        this.setStyle(STYLES.active);
+
+        // Mostrar modal con información
+        showMunicipioInfo(municipioNombre);
     });
 }
 
 // ============================================
-// MOSTRAR INFORMACIÓN
+// MOSTRAR INFORMACIÓN DEL MUNICIPIO
 // ============================================
 
-function showMunicipioInfo(municipioName) {
-    const municipio = municipiosData[municipioName];
-    if (!municipio) return;
+function showMunicipioInfo(municipioNombre) {
+    // Obtener datos del municipio
+    const municipio = municipiosData[municipioNombre] || {
+        nombre: municipioNombre,
+        distancia_tiempo: 'N/A',
+        consejos_seguridad: 'N/A',
+        ruta_viaje: '#',
+        link_turismo: '#'
+    };
 
+    // Construir contenido del modal con nuevo orden
     const modalBody = document.getElementById('modalBody');
+
     modalBody.innerHTML = `
         <h2>${municipio.nombre}</h2>
         
         <div class="info-section">
-            <div class="info-label">📍 Distancia / Tiempo</div>
-            <div class="info-value">${municipio.distancia_tiempo} DESDE GUADALAJARA</div>
+            <div class="info-label">📍 DISTANCIA / TIEMPO DESDE GUADALAJARA</div>
+            <div class="info-value">${municipio.distancia_tiempo}</div>
         </div>
 
         <div class="info-section">
-            <div class="info-label">🛡️ Consejos de Seguridad</div>
+            <div class="info-label">🛡️ CONSEJOS DE SEGURIDAD</div>
             <div class="info-value">${municipio.consejos_seguridad}</div>
         </div>
 
@@ -220,44 +245,107 @@ function showMunicipioInfo(municipioName) {
         </div>
 
         <div class="info-section">
-            <div class="info-label">🗺️ Ruta / Viaje desde GDL</div>
+            <div class="info-label">🗺️ RUTA / VIAJE DESDE GDL</div>
             <div class="info-value">
                 <a href="${municipio.ruta_viaje}" target="_blank">${municipio.ruta_viaje}</a>
             </div>
         </div>
 
         <div class="info-section">
-            <div class="info-label">🌍 Link Turismo</div>
+            <div class="info-label">🌍 LINK TURISMO</div>
             <div class="info-value">
                 <a href="${municipio.link_turismo}" target="_blank">${municipio.link_turismo}</a>
             </div>
         </div>
     `;
 
+    // Mostrar modal
     const modal = document.getElementById('infoModal');
     modal.style.display = 'block';
 }
 
+// ============================================
+// CERRAR MODAL
+// ============================================
+
 function closeModal() {
-    document.getElementById('infoModal').style.display = 'none';
+    const modal = document.getElementById('infoModal');
+    modal.style.display = 'none';
+
+    // Remover estilo activo del municipio
+    if (currentActiveFeature) {
+        currentActiveFeature.setStyle(STYLES.default);
+        currentActiveFeature = null;
+    }
 }
 
 // ============================================
-// EVENTOS
+// EVENT LISTENERS
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function() {
-    const closeBtn = document.querySelector('.close-btn');
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
-
-    const modal = document.getElementById('infoModal');
-    window.addEventListener('click', function(event) {
-        if (event.target === modal) closeModal();
-    });
-
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') closeModal();
-    });
-
+    // Inicializar mapa cuando el DOM esté listo
     initMap();
+
+    // Cerrar modal al hacer click en el botón X
+    const closeBtn = document.querySelector('.close-btn');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeModal);
+    }
+
+    // Cerrar modal al hacer click fuera del contenido
+    const modal = document.getElementById('infoModal');
+    if (modal) {
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+    }
+
+    // Cerrar modal con tecla ESC
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeModal();
+        }
+    });
 });
+
+// ============================================
+// ESTILOS PARA TOOLTIPS
+// ============================================
+
+// Agregar estilos CSS dinámicamente para los tooltips
+const style = document.createElement('style');
+style.textContent = `
+    .municipio-tooltip {
+        background-color: rgba(30, 60, 114, 0.9) !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 4px !important;
+        padding: 8px 12px !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .municipio-tooltip::before {
+        border-top-color: rgba(30, 60, 114, 0.9) !important;
+    }
+
+    .pueblo-magico-tooltip {
+        background-color: rgba(139, 0, 139, 0.9) !important;
+        color: white !important;
+        border: none !important;
+        border-radius: 4px !important;
+        padding: 8px 12px !important;
+        font-size: 14px !important;
+        font-weight: 600 !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .pueblo-magico-tooltip::before {
+        border-top-color: rgba(139, 0, 139, 0.9) !important;
+    }
+`;
+document.head.appendChild(style);
