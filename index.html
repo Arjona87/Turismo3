@@ -16,7 +16,12 @@
     <header class="app-header">
         <div class="header-content">
             <h1>🗺️ Dashboard Turismo - Jalisco</h1>
-            <p class="subtitle">Explora los municipios del estado de Jalisco</p>
+            <p class="subtitle">Explora los pueblos mágicos del estado de Jalisco</p>
+            <div class="status-indicator">
+                <span id="status-icon">🟢</span>
+                <span id="status-text">Datos cargados</span>
+                <button id="manual-update" title="Actualizar datos desde Google Sheets">🔄 Actualizar</button>
+            </div>
         </div>
     </header>
 
@@ -42,6 +47,6 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     
     <!-- Scripts personalizados -->
-    <script src="map.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
